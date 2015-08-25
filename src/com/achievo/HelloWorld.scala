@@ -27,5 +27,10 @@ object HelloWorld {
       
     for (i <- 0 to 2) 
       print(strArr(i))
+
+    val numbers = Map("one" -> 1, "two" -> 2)
+    println(numbers.get("one"))
+
+    val str:String = "Hello"
   }
 }

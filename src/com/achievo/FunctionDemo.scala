@@ -60,7 +60,7 @@ object FunctionDemo {
     println("function5:" + function5)
     val f1 = function6 _
     f1(1, 2)
-    staticfunction //发现无法运行,因为staticfunction是一个参数  
+    //staticfunction //发现无法运行,因为staticfunction是一个参数
     println("staticfunction:" + staticfunction) //输出:(),相对于null  
     println(value1 + ";" + value2 + ";" + value3) //value2=null  
   }
