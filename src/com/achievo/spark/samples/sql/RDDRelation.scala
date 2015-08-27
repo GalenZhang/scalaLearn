@@ -31,5 +31,16 @@ object RDDRelation {
     
     // Queries can also be written using a LINQ-like Scala DSL.
     df.where($"key" === 1).orderBy($"value".asc).select($"key").collect().foreach(println)
+    
+    df.write.parquet("pair.parquet")
+    
+    val parquetFile = sqlContext.read.parquet("pair.parquet")
+    
+    parquetFile.where($"key" === 1).select($"value".as("a")).collect().foreach(println)
+    
+    parquetFile.registerTempTable("parquetFile")
+    sqlContext.sql("SELECT * FROM parquetFile").collect().foreach(println)
+    
+    sc.stop()
   }
 }
