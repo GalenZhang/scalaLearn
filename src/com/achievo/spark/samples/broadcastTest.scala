@@ -12,7 +12,7 @@ object broadcastTest {
 
     System.setProperty("spark.broadcast.factory", "org.apache.spark.broadcast." + bcName + "BroadcastFactory")
     System.setProperty("spark.broadcast.blockSize", blockSize)
-    val sparkConf = new SparkConf().setAppName("Broadcast Test").setMaster("spark://10.50.90.54:7077")
+    val sparkConf = new SparkConf().setAppName("Broadcast Test").setMaster("spark://10.50.90.28:7077")
     val sc = new SparkContext(sparkConf)
 
     val slices = 2
