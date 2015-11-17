@@ -13,6 +13,14 @@ object Func {
   def main(args: Array[String]): Unit = {
 
     println(func(100))
+    println("hello"(4))
+
+    val x = 0
+    val y = if (x > 0) 1 else if (x < 0) -1
+    println(y.isInstanceOf[Unit])
+
+    val z = if (x > 0) 1 else "ABC"
+    println(z.isInstanceOf[String])
   }
 }
 
@@ -69,4 +77,12 @@ class Func {
   val a = Array("Hello", "World")
   val b = Array("hello", "world")
   a.corresponds(b)(_.equalsIgnoreCase(_))
+
+  val d: Double = 3.14
+  val i: Int = d.toInt
+
+  val lst = 1.to(10)
+  for (i <- lst) println(i)
+
+  println("Hello"(4))
 }
