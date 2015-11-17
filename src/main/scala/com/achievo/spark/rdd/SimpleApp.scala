@@ -7,8 +7,8 @@ import org.apache.spark.SparkContext
  */
 object SimpleApp {
   def main(args: Array[String]): Unit = {
-    val logFile = "file///home/hadoop/temp/README.md"
-    val conf = new SparkConf().setAppName("Simple Application")
+    val logFile = "file:///home/hadoop/temp/README.md"
+    val conf = new SparkConf().setAppName("Simple Application").setMaster("local[*]")
     val sc = new SparkContext(conf)
     val logData = sc.textFile(logFile, 2).cache()
     val numAs = logData.filter(line => line.contains("a")).count()
