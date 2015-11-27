@@ -1,10 +1,22 @@
 package com.achievo.samples
+import scala.util.matching.Regex
 
 /**
  * @author galen.zhang
  */
+object Email {
+  def unapply(str: String) = new Regex("""(.*)@(.*)""")
+    .unapplySeq(str).get match {
+    case user :: domain :: Nil => Some(user, domain)
+    case _ => None
+  }
+}
 object MatchTest {
   def main(args: Array[String]): Unit = {
+    "user@domain.com" match {
+      case Email(user, domain) => println(user + "@" + domain)
+    }
+    
     val data = 10
     matchNum(data)
 
