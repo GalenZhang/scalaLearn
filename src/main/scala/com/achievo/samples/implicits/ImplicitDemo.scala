@@ -1,4 +1,4 @@
-package com.achievo.samples
+package com.achievo.samples.implicits
 
 /**
  * @author galen.zhang
