@@ -120,5 +120,7 @@ object FutherTest {
       heatedWater <- heatWater(Water(25))
       okay <- temperatureOkay(heatedWater)
     } yield okay
+    
+    Thread.sleep(Random.nextInt(2000))
   }
 }
